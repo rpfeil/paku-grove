@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Paku Grove — Animal Arcade</title>
+    <meta name="description" content="A charming animal-themed maze arcade: guide Bunny through the grove, nibble clover, and outfox the predators." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="mist mist-a"></div>
+      <div class="mist mist-b"></div>
+      <div class="canopy"></div>
+      <div class="fireflies"></div>
+    </div>
+
+    <main class="shell">
+      <header class="brand-bar">
+        <p class="eyebrow">Forest maze arcade</p>
+        <h1 class="brand">Paku Grove</h1>
+      </header>
+
+      <section class="hud" aria-live="polite">
+        <div class="hud-item">
+          <span class="hud-label">Score</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">Lives</span>
+          <strong id="lives" class="lives">●●●</strong>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">Level</span>
+          <strong id="level">1</strong>
+        </div>
+      </section>
+
+      <div class="stage-wrap">
+        <canvas id="game" width="560" height="620" aria-label="Paku Grove game board"></canvas>
+
+        <div id="overlay" class="overlay">
+          <div class="overlay-card">
+            <p class="overlay-kicker" id="overlay-kicker">Ready?</p>
+            <h2 id="overlay-title">Nibble the grove</h2>
+            <p id="overlay-body">
+              Guide Bunny through the twilight maze. Collect clover and berries,
+              dodge Fox, Owl, Weasel, and Lynx — and snag a golden acorn to turn the chase.
+            </p>
+            <button type="button" id="start-btn" class="cta">Start hopping</button>
+            <p class="hint">Arrows or WASD · Space to pause · R to restart</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="touch-pad" aria-label="On-screen controls">
+        <button type="button" data-dir="up" aria-label="Move up">▲</button>
+        <div class="touch-mid">
+          <button type="button" data-dir="left" aria-label="Move left">◀</button>
+          <button type="button" data-dir="down" aria-label="Move down">▼</button>
+          <button type="button" data-dir="right" aria-label="Move right">▶</button>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>Bunny vs. woodland predators · charming chase, zero gore</p>
+      </footer>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
